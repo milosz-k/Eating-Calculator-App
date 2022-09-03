@@ -1,7 +1,7 @@
 import requests
 import os
 from dotenv import load_dotenv
-load_dotenv(".env")
+load_dotenv("./../.env")
 API_NUTRITIONIX = "https://trackapi.nutritionix.com/v2/natural/nutrients"
 APP_ID_NUTRITIONIX = os.getenv("APP_ID_NUTRITIONIX")
 API_KEY_NUTRITIONIX = os.getenv("API_KEY_NUTRITIONIX")
