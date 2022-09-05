@@ -1,8 +1,17 @@
 import json
 
 class CaloriesGoal:
-    
-    def set(self, proteins, carbohydrates, fats):
+    """Class of the user's daily eating goal."""
+
+    def set(self, proteins, carbohydrates, fats) -> None:
+        """Save user's daily eating goal to the json file.
+
+        Args:
+            proteins (int): amount of proteins
+            carbohydrates (int): amount of carbohydrates
+            fats (int): amount of fats
+
+        """
         self.dictionary = {
             "proteins": proteins,
             "carbohydrates": carbohydrates,
@@ -12,7 +21,8 @@ class CaloriesGoal:
         with open("my_makro.json", "w") as makro:
             makro.write(json.dumps(self.dictionary))
 
-    def read(self):
+    def read(self) -> None:
+        """Read the user's daily eating goal file."""
         self.reading_complete = False
         try:
             with open("my_makro.json", "r") as makro:

@@ -3,8 +3,10 @@ from tkinter import messagebox
 from app_brain import AppBrain
 
 class Window:
+    """Class of a window interface."""
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """Init window interface."""
         self.window = Tk()
         self.window.title("Eating Calculator")
         self.window.minsize(width = 462, height = 424)
@@ -28,8 +30,10 @@ class Window:
 
         self.window.mainloop()
 
-    def button_add_meal(self):
-        def submit():
+    def button_add_meal(self) -> None:
+        """Add meal button execute."""
+        def submit() -> None:
+            """Submit button execute inside."""
             query = entry1.get()
             label1.destroy()
             entry1.destroy()
@@ -43,8 +47,10 @@ class Window:
         submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
         submit_button.grid(row=4, column=1, sticky="e", padx=20)
 
-    def button_set_daily_goal(self):
-        def submit():
+    def button_set_daily_goal(self) -> None:
+        """Set daily goal button execute."""
+        def submit() -> None:
+            """Sumit button execute inside."""
             proteins = entry1.get()
             carbohydrates = entry2.get()
             fats = entry3.get()
@@ -77,8 +83,10 @@ class Window:
         submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
         submit_button.grid(row=8, column=1, sticky="e", padx=20)
 
-    def button_else_to_eat(self):
-        def submit():
+    def button_else_to_eat(self) -> None:
+        """Else to eat button execute."""
+        def submit() -> None:
+            """Sumit button execute inside."""
             query = entry1.get()
             label1.destroy()
             entry1.destroy()
@@ -93,8 +101,10 @@ class Window:
         submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
         submit_button.grid(row=4, column=1, sticky="e", padx=20)
 
-    def button_adjust_last_meal_solver(self):
-        def submit():
+    def button_adjust_last_meal_solver(self) -> None:
+        """Adjust last meal solver button execute."""
+        def submit() -> None:
+            """Sumit button execute inside."""
             query = entry1.get()
             label1.destroy()
             entry1.destroy()
@@ -109,8 +119,10 @@ class Window:
         submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
         submit_button.grid(row=4, column=1, sticky="e", padx=20)
 
-    def button_already_eaten_today(self):
+    def button_already_eaten_today(self) -> None:
+        """Already eaten button execute."""
         messagebox.showinfo(title="information", message=f"{AppBrain().already_eaten_today()}")
 
-    def button_print_daily_eaten_products(self):
+    def button_print_daily_eaten_products(self) -> None:
+        """Daily eaten products button execute."""
         messagebox.showinfo(title="information", message=f"{AppBrain().print_daily_eaten_products()}")

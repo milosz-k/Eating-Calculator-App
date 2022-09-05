@@ -7,8 +7,10 @@ meal = CurrentMeal()
 solver = pywraplp.Solver_CreateSolver("GLOP")
 
 class RemainingCalculator:
+    """Class of calculating remaining nutritional values."""
 
-    def __init__(self):
+    def __init__(self) -> None:
+        """Init basic variables."""
         self.current_products_list = []
         self.remaining_proteins = 0
         self.remaining_carbohydrates = 0
@@ -16,7 +18,12 @@ class RemainingCalculator:
         self.remaining_calories = 0
         self.info = []
  
-    def create_available_products_list(self, query):
+    def create_available_products_list(self, query) -> None:
+        """Create a list contains products chosen by the user.
+        
+        Args:
+            query (str): text contains products with their amount separated by comma or "and" word.
+        """
         find_product = FindProducts()
         find_product.find_products_eaten(query)
         for n in range(0, find_product.number_of_products):
@@ -25,7 +32,8 @@ class RemainingCalculator:
             self.current_products_list.append(the_product)
         self.info.append(find_product.info)
 
-    def calculate_remaining_makro(self):
+    def calculate_remaining_makro(self) -> None:
+        """Calculate remaining proteins, carbohydrates and fats daily."""
         meal.current_day_file.read_current_day()
         meal.current_day_file.sum_daily_makros()
         meal.current_day_file.remaining_makros()
@@ -37,7 +45,8 @@ class RemainingCalculator:
         self.info.append(meal.current_day_file.info)
         self.info.append(meal.current_day_file.my_goal.info)
     
-    def calculate(self):
+    def calculate(self) -> None:
+        """Calculates amount of each product separately to fill up proteins, carbohydrates and fats to reach the daily goal."""
         for n in range(0, len(self.current_products_list)):
             if self.remaining_proteins >= 0:
                 try:
@@ -66,7 +75,12 @@ class RemainingCalculator:
             else:
                 self.info.append(f"You have exceeded your fats by {abs(self.remaining_proteins)} grams already")
 
-    def solver(self, query):
+    def solver(self, query) -> None:
+        """Optimize amount of every given product to fill up proteins, carbohydrates and fats to reach the daily goal.
+        
+        Args:
+            query (str): text contains products with their amount separated by comma or "and" word.
+        """
         self.create_available_products_list(query)
         self.calculate_remaining_makro()
         if "File read successfully" in self.info:

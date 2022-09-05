@@ -5,8 +5,19 @@ from remaining_calc import RemainingCalculator
 from date import DateFile
 
 class AppBrain:
+    """Class of connection between logical classes."""
 
-    def set_calories_goal(self, proteins, carbohydrates, fats):
+    def set_calories_goal(self, proteins, carbohydrates, fats) -> str:
+        """Save user's daily eating goal to the file.
+
+        Args:
+            proteins (int): amount of proteins
+            carbohydrates (int): amount of carbohydrates
+            fats (int): amount of fats
+
+        Return:
+            str: information about user's daily goal setting attempt.
+        """
         my_goal = CaloriesGoal()
         variables_correct = False
         while variables_correct == False:
@@ -27,7 +38,15 @@ class AppBrain:
         my_goal.set(proteins, carbohydrates, fats)
         return "Setup completed successfully"
 
-    def add_meal(self, query):
+    def add_meal(self, query) -> str:
+        """Add a meal to the current day file.
+        
+        Args:
+            query (str): text contains products with their amount.
+
+        Return: 
+            str: information about adding a meal attempt.
+        """
         meal = CurrentMeal()
         try:
             meal.create_meal(query)
@@ -38,7 +57,15 @@ class AppBrain:
             return f"{meal.info}\n{meal.current_day_file.info}"
             
 
-    def else_to_eat(self, query):
+    def else_to_eat(self, query) -> str:
+        """Calculates amount of given products separately to fill up proteins, carbohydrates and fats to reach the daily goal.
+        
+        Args:
+            query (str): text contains products with their amount.
+
+        Return: 
+            str: information about calculation attempt.
+        """
         calculator = RemainingCalculator()
         calculator.create_available_products_list(query)
         try:
@@ -52,14 +79,16 @@ class AppBrain:
             info += str(n)+"\n"
         return info
 
-    def already_eaten_today(self):
+    def already_eaten_today(self) -> str:
+        """Return daily eaten proteins, carbohydrates and fats."""
         today = DateFile()
         today.read_current_day()
         today.sum_daily_makros()
 
         return f"{today.info}\nYou have eaten today:\n{today.proteins}g proteins\n{today.carbohydrates}g carbohydrates\n{today.fats}g fats"
 
-    def print_daily_eaten_products(self):
+    def print_daily_eaten_products(self) -> str:
+        """Return daily eaten products."""
         today = DateFile()
         today.read_current_day()
         today.print_daily_eaten_products()
@@ -69,7 +98,15 @@ class AppBrain:
             info += product+"\n"
         return info
 
-    def adjust_last_meal_solver(self, query):
+    def adjust_last_meal_solver(self, query) -> str:
+        """Optimize amount of every given product to fill up proteins, carbohydrates and fats to reach the daily goal.
+        
+        Args:
+            query (str): text contains products with their amount.
+        
+        Return:
+            str: information about calculation attempt.
+        """
         calculator = RemainingCalculator()
         try:
             calculator.solver(query)
