@@ -30,4 +30,3 @@ class CaloriesGoal:
             self.calories = self.dictionary["calories"]
             self.reading_complete = True
             self.info = "File read successfully"
-        return self.info

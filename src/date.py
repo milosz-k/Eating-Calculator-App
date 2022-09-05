@@ -23,12 +23,10 @@ class DateFile:
             self.info = "There is no meal history today yet"
         else:
             self.info = "Meal history already exists today"
-        return self.info
 
     def update_current_day(self, dict):
         self.keys_to_remove = []
         for key in dict:
-            #jesli nowy produkt jest w liscie to zapisz jego dane
             if key in self.whole_day_data:
                 self.whole_day_data[key]["grams"] += dict[key]["grams"]
                 self.whole_day_data[key]["proteins"] += dict[key]["proteins"]
@@ -40,7 +38,6 @@ class DateFile:
         self.whole_day_data.update(dict)
         with open(TODAY + ".json", "w") as self.day_of_eating:
             self.day_of_eating.write(f"{json.dumps(self.whole_day_data)}")
-
 
     def sum_daily_makros(self):
         for key in self.whole_day_data:
@@ -56,10 +53,8 @@ class DateFile:
             self.remaining_carbohydrates = self.my_goal.carbohydrates - self.carbohydrates
             self.remaining_fats = self.my_goal.fats - self.fats
             self.remaining_calories = self.my_goal.calories - 4 * self.proteins - 4 * self.carbohydrates - 9 * self.fats
-        return self.my_goal.info
 
     def print_daily_eaten_products(self):
         self.list_of_products = []
         for key in self.whole_day_data:
             self.list_of_products.append(f"{key}: {self.whole_day_data[key]['grams']} grams")
-        return self.list_of_products

@@ -24,7 +24,6 @@ class RemainingCalculator:
             the_product = Product(name=find_product.name, grams=find_product.grams, proteins=find_product.proteins, carbohydrates=find_product.carbohydrates, fats=find_product.fats)
             self.current_products_list.append(the_product)
         self.info.append(find_product.info)
-        return self.info
 
     def calculate_remaining_makro(self):
         meal.current_day_file.read_current_day()
@@ -37,7 +36,6 @@ class RemainingCalculator:
             self.remaining_calories = meal.current_day_file.remaining_calories
         self.info.append(meal.current_day_file.info)
         self.info.append(meal.current_day_file.my_goal.info)
-        return self.info
     
     def calculate(self):
         for n in range(0, len(self.current_products_list)):
@@ -67,8 +65,6 @@ class RemainingCalculator:
                     self.info.append(f"{self.current_products_list[n].name} has no fats, so it is impossible to fill fats by this product.")
             else:
                 self.info.append(f"You have exceeded your fats by {abs(self.remaining_proteins)} grams already")
-        return self.info
-
 
     def solver(self, query):
         self.create_available_products_list(query)
@@ -95,6 +91,4 @@ class RemainingCalculator:
             objective.SetMaximization()
             solver.Solve()
             for product in self.current_products_list:
-                self.info.append(f"{product.name}, {round(product.grams.solution_value()*100)} grams")
-        return self.info
-        
+                self.info.append(f"{product.name}, {round(product.grams.solution_value()*100)} grams")        

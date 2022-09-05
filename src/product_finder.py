@@ -6,7 +6,6 @@ API_NUTRITIONIX = "https://trackapi.nutritionix.com/v2/natural/nutrients"
 APP_ID_NUTRITIONIX = os.getenv("APP_ID_NUTRITIONIX")
 API_KEY_NUTRITIONIX = os.getenv("API_KEY_NUTRITIONIX")
 
-
 class FindProducts:
     
     def __init__(self):
@@ -29,10 +28,8 @@ class FindProducts:
         self.number_of_products = len(self.response_json["foods"])
         if self.number_of_products < self.probably_products:
             self.info = "There may be less products found and used then suspected"
-            return self.info
         else:
             self.info = "All products found"
-            return self.info
     
     def set_product_params(self, ordinal_nr):
         self.name = self.response_json["foods"][ordinal_nr]["food_name"]

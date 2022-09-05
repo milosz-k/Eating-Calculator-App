@@ -20,11 +20,7 @@ class CurrentMeal:
             the_product.create_product_dict()
             self.dict.update(the_product.current_product)
         self.info = find_product.info
-        return self.info
 
     def save_meal_to_current_day(self):
         self.current_day_file.read_current_day()
-        #except IOError:
-            #self.current_day_file.create_current_day_file(self.dict)
         self.current_day_file.update_current_day(self.dict)
-        return self.current_day_file.info
