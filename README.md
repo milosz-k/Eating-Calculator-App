@@ -15,10 +15,7 @@ Download the repository and modify the env. file with your own tokens. Acces to 
 After modifying .env file, you can run `python src/main.py`.
 
 ## Usage example
-### Menu
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Menu.PNG)
-
-### Set calories goal
+### Set daily goal
 ![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Set.PNG)
 
 ### Add new meal
