@@ -24,7 +24,7 @@ After modifying .env file, you can run `python src/main.py`.
 ### Show eaten energy content
 ![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Energy.PNG)
 
-### Calculate remaining nutrients by following products
+### Calculate remaining nutrients by meal containing following products
 ![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Solver.PNG)
 
 ### Result of calculation
