@@ -67,13 +67,15 @@ class AppBrain:
             str: information about calculation attempt.
         """
         calculator = RemainingCalculator()
-        calculator.create_available_products_list(query)
         try:
+            calculator.create_available_products_list(query)
             calculator.calculate_remaining_makro()
             if "File read successfully" in calculator.info:
                 calculator.calculate()
         except DatabaseError:
             pass
+        except KeyError:
+            return "No one product found"
         info = ""
         for n in calculator.info:
             info += str(n)+"\n"
