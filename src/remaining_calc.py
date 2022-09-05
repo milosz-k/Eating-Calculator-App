@@ -30,7 +30,7 @@ class RemainingCalculator:
         meal.current_day_file.read_current_day()
         meal.current_day_file.sum_daily_makros()
         meal.current_day_file.remaining_makros()
-        if meal.current_day_file.info == "File read successfully":
+        if meal.current_day_file.my_goal.reading_complete == True:
             self.remaining_proteins = meal.current_day_file.remaining_proteins
             self.remaining_carbohydrates = meal.current_day_file.remaining_carbohydrates
             self.remaining_fats = meal.current_day_file.remaining_fats
