@@ -8,7 +8,7 @@ The app has also a innovative function which lets user to type any number of pro
 ## How to start?
 ### Option 1
 Download the repository and run TheEatingCalculator.exe file.
-I'm aware that .exe file is using my personal tokens. In this case these tokens are free, so I decided to give open acces to this .exe file to show this application's working nature.
+I'm aware that .exe file is using my personal tokens. In this case these tokens are free, so I decided to give open acces to .env file to make checking this application's working nature easier.
 
 ### Option 2
 Download the repository and modify the env. file with your own tokens. Acces to these tokens is free and available by this site: https://developer.nutritionix.com/signup.
