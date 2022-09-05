@@ -22,7 +22,7 @@ class RemainingCalculator:
         """Create a list contains products chosen by the user.
         
         Args:
-            query (str): text contains products with their amount separated by comma or "and" word.
+            query (str): text contains products with their amount.
         """
         find_product = FindProducts()
         find_product.find_products_eaten(query)
@@ -79,7 +79,7 @@ class RemainingCalculator:
         """Optimize amount of every given product to fill up proteins, carbohydrates and fats to reach the daily goal.
         
         Args:
-            query (str): text contains products with their amount separated by comma or "and" word.
+            query (str): text contains products with their amount.
         """
         self.create_available_products_list(query)
         self.calculate_remaining_makro()

@@ -8,7 +8,7 @@ API_KEY_NUTRITIONIX = os.getenv("API_KEY_NUTRITIONIX")
 
 class FindProducts:
     """Class of API management."""
-    
+
     def __init__(self) -> None:
         """Init API headers."""
         self.headers_nutritionix = {
@@ -21,7 +21,7 @@ class FindProducts:
         """Find products parameters.
 
         Args:
-            query (str): text contains products with their amount separated by comma or "and" word.
+            query (str): text contains products with their amount.
         """
         self.query = query
         self.probably_products = 1

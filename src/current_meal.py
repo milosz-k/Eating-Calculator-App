@@ -15,7 +15,7 @@ class CurrentMeal:
         """Create new group of products.
         
         Args:
-            query (str): text contains products with their amount separated by comma or "and" word.
+            query (str): text contains products with their amount.
         """
         find_product = FindProducts()
         find_product.find_products_eaten(query)
