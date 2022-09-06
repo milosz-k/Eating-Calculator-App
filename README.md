@@ -3,7 +3,7 @@
 
 ## About
 The Eating Calculator allows user to control his day of eating. After setting daily intake goal of proteins, carbohydrates and fats, user can add his meals to control himself. User can check his day of eating, remaining nutritional values or eaten products at any time of the day. 
-The app has also a innovative function which lets user to type any number of products and then the app optimizes amount of each given product to reach the user's daily nutritional goal.
+The app has also an innovative function which lets user to type any number of products and then the app optimizes amount of each given product to reach the user's daily nutritional goal.
 
 ## How to start?
 Download the repository and run `pip install -r requirements.txt`. Then run TheEatingCalculator.exe file or run `python src/main.py`.
