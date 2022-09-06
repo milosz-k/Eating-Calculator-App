@@ -16,22 +16,22 @@ After modifying .env file, you can run `python src/main.py`.
 
 ## Usage example
 ### Set daily goal
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Set.PNG)
+![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/doc/Set.PNG)
 
 ### Add new meal
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Add.PNG)
+![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/doc/Add.PNG)
 
 ### Show eaten energy content
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Energy.PNG)
+![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/doc/Energy.PNG)
 
 ### Calculate remaining nutrients by meal containing following products
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/Solver.PNG)
+![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/doc/Solver.PNG)
 
 ### Result of calculation
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/SolverResult.PNG)
+![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/doc/SolverResult.PNG)
 
 ### Eaten products containing calculated meal
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/ProductsAfterSolver.PNG)
+![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/doc/ProductsAfterSolver.PNG)
 
 ### Daily nutrients intake containing calculated meal
-![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/src/img/NutrientsAfterSolver.PNG)
+![alt text](https://github.com/milosz-k/Eating-Calculator-App/blob/master/doc/NutrientsAfterSolver.PNG)
