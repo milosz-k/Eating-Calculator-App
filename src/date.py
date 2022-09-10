@@ -62,10 +62,10 @@ class DateFile:
             self.fats += round(self.whole_day_data[key]["fats"])
 
     def remaining_makros(self) -> None:
-        """Calculate amount of remaining proteins, carbohydrates, fats and kilocalories."""
+        """Calculate amount of remaining macronutrients."""
         self.my_goal = CaloriesGoal()
         self.my_goal.read()
-        if self.my_goal.reading_complete == True:
+        if self.my_goal.reading_complete:
             self.remaining_proteins = self.my_goal.proteins - self.proteins
             self.remaining_carbohydrates = (
                 self.my_goal.carbohydrates - self.carbohydrates

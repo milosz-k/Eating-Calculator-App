@@ -58,7 +58,8 @@ class AppBrain:
             return f"{meal.info}\n{meal.current_day_file.info}"
 
     def else_to_eat(self, query) -> str:
-        """Calculates amount of given products separately to fill up proteins, carbohydrates and fats to reach the daily goal.
+        """Calculates amount of given products separately to fill up
+        proteins, carbohydrates and fats to reach the daily goal.
 
         Args:
             query (str): text contains products with their amount.
@@ -101,7 +102,8 @@ class AppBrain:
         return info
 
     def adjust_last_meal_solver(self, query) -> str:
-        """Optimize amount of every given product to fill up proteins, carbohydrates and fats to reach the daily goal.
+        """Optimize amount of every given product to fill up
+        proteins, carbohydrates and fats to reach the daily goal.
 
         Args:
             query (str): text contains products with their amount.

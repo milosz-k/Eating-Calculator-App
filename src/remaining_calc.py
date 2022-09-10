@@ -44,7 +44,7 @@ class RemainingCalculator:
         meal.current_day_file.read_current_day()
         meal.current_day_file.sum_daily_makros()
         meal.current_day_file.remaining_makros()
-        if meal.current_day_file.my_goal.reading_complete == True:
+        if meal.current_day_file.my_goal.reading_complete:
             self.remaining_proteins = meal.current_day_file.remaining_proteins
             self.remaining_carbohydrates = meal.current_day_file.remaining_carbohydrates
             self.remaining_fats = meal.current_day_file.remaining_fats
@@ -53,7 +53,8 @@ class RemainingCalculator:
         self.info.append(meal.current_day_file.my_goal.info)
 
     def calculate(self) -> None:
-        """Calculates amount of each product separately to fill up proteins, carbohydrates and fats to reach the daily goal."""
+        """Calculates amount of each product separately to fill up
+        proteins, carbohydrates and fats to reach the daily goal."""
         for n in range(0, len(self.current_products_list)):
             if self.remaining_proteins >= 0:
                 try:
@@ -120,7 +121,7 @@ class RemainingCalculator:
         """
         self.create_available_products_list(query)
         self.calculate_remaining_makro()
-        if meal.current_day_file.my_goal.reading_complete == True:
+        if meal.current_day_file.my_goal.reading_complete:
             self.solver_list = []
             for product in self.current_products_list:
                 ratio = 100 / product.grams
