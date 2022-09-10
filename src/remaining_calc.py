@@ -83,7 +83,7 @@ class RemainingCalculator:
         """
         self.create_available_products_list(query)
         self.calculate_remaining_makro()
-        if "File read successfully" in self.info:
+        if meal.current_day_file.my_goal.reading_complete == True:
             self.solver_list = []
             for product in self.current_products_list:
                 ratio = 100 / product.grams

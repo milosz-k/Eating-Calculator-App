@@ -51,18 +51,3 @@ class FindProducts:
         self.proteins = self.response_json["foods"][ordinal_nr]["nf_protein"]
         self.carbohydrates = self.response_json["foods"][ordinal_nr]["nf_total_carbohydrate"]
         self.fats = self.response_json["foods"][ordinal_nr]["nf_total_fat"]
-
-    # def find_products_makro(self) -> None:
-    #     """"""
-    #     self.query = input("What products do you have? ").lower()
-    #     self.probably_products = 1
-    #     self.probably_products += self.query.count(",") + self.query.count("and")
-    #     self.body = {
-    #         "query": self.query,
-    #     }
-
-    #     self.response = requests.post(url=API_NUTRITIONIX, json=self.body, headers=self.headers_nutritionix)
-    #     self.response_json = self.response.json()
-    #     self.number_of_products = len(self.response_json["foods"])
-    #     if self.number_of_products < self.probably_products:
-    #         print("There may be less products found and used then suspected")

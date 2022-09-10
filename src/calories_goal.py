@@ -28,11 +28,11 @@ class CaloriesGoal:
             with open("my_makro.json", "r") as makro:
                 self.dictionary = json.load(makro)
         except json.JSONDecodeError:
-            self.info = "Incomplete makro data"
+            self.info = "Incomplete macronutrients data"
         except FileNotFoundError:
-            self.info = "No File. Please set your daily makros instead"
+            self.info = "Please set your daily macronutrients goal instead"
         except KeyError:
-            self.info = "Incomplete makro data"
+            self.info = "Incomplete macronutrients data"
         else:
             self.proteins = self.dictionary["proteins"]
             self.carbohydrates = self.dictionary["carbohydrates"]
