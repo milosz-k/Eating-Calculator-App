@@ -1,5 +1,6 @@
 import json
 
+
 class CaloriesGoal:
     """Class of the user's daily eating goal."""
 
@@ -16,7 +17,7 @@ class CaloriesGoal:
             "proteins": proteins,
             "carbohydrates": carbohydrates,
             "fats": fats,
-            "calories": proteins * 4 + carbohydrates * 4 + fats * 9
+            "calories": proteins * 4 + carbohydrates * 4 + fats * 9,
         }
         with open("my_makro.json", "w") as makro:
             makro.write(json.dumps(self.dictionary))
@@ -39,4 +40,4 @@ class CaloriesGoal:
             self.fats = self.dictionary["fats"]
             self.calories = self.dictionary["calories"]
             self.reading_complete = True
-            self.info = "File read successfully"
+            self.info = "Daily goal file read successfully"

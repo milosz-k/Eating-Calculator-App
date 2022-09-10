@@ -4,6 +4,7 @@ from calories_goal import CaloriesGoal
 from remaining_calc import RemainingCalculator
 from date import DateFile
 
+
 class AppBrain:
     """Class of connection between logical classes."""
 
@@ -40,11 +41,11 @@ class AppBrain:
 
     def add_meal(self, query) -> str:
         """Add a meal to the current day file.
-        
+
         Args:
             query (str): text contains products with their amount.
 
-        Return: 
+        Return:
             str: information about adding a meal attempt.
         """
         meal = CurrentMeal()
@@ -55,15 +56,14 @@ class AppBrain:
             return "No one product found"
         else:
             return f"{meal.info}\n{meal.current_day_file.info}"
-            
 
     def else_to_eat(self, query) -> str:
         """Calculates amount of given products separately to fill up proteins, carbohydrates and fats to reach the daily goal.
-        
+
         Args:
             query (str): text contains products with their amount.
 
-        Return: 
+        Return:
             str: information about calculation attempt.
         """
         calculator = RemainingCalculator()
@@ -78,7 +78,7 @@ class AppBrain:
             return "No one product found"
         info = ""
         for n in calculator.info:
-            info += str(n)+"\n"
+            info += str(n) + "\n"
         return info
 
     def already_eaten_today(self) -> str:
@@ -95,17 +95,17 @@ class AppBrain:
         today.read_current_day()
         today.print_daily_eaten_products()
 
-        info = today.info+"\n"
+        info = today.info + "\n"
         for product in today.list_of_products:
-            info += product+"\n"
+            info += product + "\n"
         return info
 
     def adjust_last_meal_solver(self, query) -> str:
         """Optimize amount of every given product to fill up proteins, carbohydrates and fats to reach the daily goal.
-        
+
         Args:
             query (str): text contains products with their amount.
-        
+
         Return:
             str: information about calculation attempt.
         """
@@ -117,5 +117,5 @@ class AppBrain:
         else:
             info = ""
             for n in calculator.info:
-                info += str(n)+"\n"
+                info += str(n) + "\n"
         return info

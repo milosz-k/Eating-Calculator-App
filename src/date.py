@@ -4,6 +4,7 @@ from calories_goal import CaloriesGoal
 
 TODAY = str(datetime.datetime.today().strftime("%d-%m-20%y"))
 
+
 class DateFile:
     """Class of the daily file."""
 
@@ -16,7 +17,7 @@ class DateFile:
 
     def create_current_day_file(self, dict) -> None:
         """Create a file.
-        
+
         Args:
             dict (dict): dictionary contains products eaten during a meal.
         """
@@ -35,7 +36,7 @@ class DateFile:
 
     def update_current_day(self, dict) -> None:
         """Update current day's file.
-        
+
         Args:
             dict: dictionary contains products eaten during a meal.
         """
@@ -66,12 +67,21 @@ class DateFile:
         self.my_goal.read()
         if self.my_goal.reading_complete == True:
             self.remaining_proteins = self.my_goal.proteins - self.proteins
-            self.remaining_carbohydrates = self.my_goal.carbohydrates - self.carbohydrates
+            self.remaining_carbohydrates = (
+                self.my_goal.carbohydrates - self.carbohydrates
+            )
             self.remaining_fats = self.my_goal.fats - self.fats
-            self.remaining_calories = self.my_goal.calories - 4 * self.proteins - 4 * self.carbohydrates - 9 * self.fats
+            self.remaining_calories = (
+                self.my_goal.calories
+                - 4 * self.proteins
+                - 4 * self.carbohydrates
+                - 9 * self.fats
+            )
 
     def print_daily_eaten_products(self) -> None:
         """Formulate daily eaten products with their amount."""
         self.list_of_products = []
         for key in self.whole_day_data:
-            self.list_of_products.append(f"{key}: {self.whole_day_data[key]['grams']} grams")
+            self.list_of_products.append(
+                f"{key}: {self.whole_day_data[key]['grams']} grams"
+            )

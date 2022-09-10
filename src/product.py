@@ -1,6 +1,6 @@
 class Product:
     """Class of a product parameters."""
-    
+
     def __init__(self, name, grams, proteins, carbohydrates, fats) -> None:
         """Init the product existence.
 
@@ -20,9 +20,10 @@ class Product:
     def create_product_dict(self) -> None:
         """Create dictionary includes product parameters."""
         self.current_product = {
-            self.name: {"grams": round(self.grams),
-            "proteins": round(self.proteins),
-            "carbohydrates": round(self.carbohydrates),
-            "fats": round(self.fats)
+            self.name: {
+                "grams": round(self.grams),
+                "proteins": round(self.proteins),
+                "carbohydrates": round(self.carbohydrates),
+                "fats": round(self.fats),
             }
         }
