@@ -1,8 +1,9 @@
 from sqlite3 import DatabaseError
-from current_meal import CurrentMeal
+
 from calories_goal import CaloriesGoal
-from remaining_calc import RemainingCalculator
+from current_meal import CurrentMeal
 from date import DateFile
+from remaining_calc import RemainingCalculator
 
 
 class AppBrain:

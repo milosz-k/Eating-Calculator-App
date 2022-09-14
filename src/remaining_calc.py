@@ -1,7 +1,8 @@
-from product_finder import FindProducts
-from product import Product
-from current_meal import CurrentMeal
 from ortools.linear_solver import pywraplp
+
+from current_meal import CurrentMeal
+from product import Product
+from product_finder import FindProducts
 
 meal = CurrentMeal()
 solver = pywraplp.Solver_CreateSolver("GLOP")

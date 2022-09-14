@@ -1,6 +1,6 @@
-from product_finder import FindProducts
-from product import Product
 from date import DateFile
+from product import Product
+from product_finder import FindProducts
 
 
 class CurrentMeal:

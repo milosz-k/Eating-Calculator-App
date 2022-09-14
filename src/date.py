@@ -1,5 +1,6 @@
 import datetime
 import json
+
 from calories_goal import CaloriesGoal
 
 TODAY = str(datetime.datetime.today().strftime("%d-%m-20%y"))
