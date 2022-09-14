@@ -12,7 +12,7 @@ class Window:
         self.window.title("Eating Calculator")
         self.window.minsize(width=462, height=424)
         self.window.config(padx=0, pady=0, bg="lightblue")
-        self.bg = PhotoImage(file="src/img/vege.png")
+        self.bg = PhotoImage(file="./img/vege.png")
         self.label_bg = Label(self.window, image=self.bg, highlightthickness=0)
         self.label_bg.grid(row=0, column=0, rowspan=9, columnspan=2)
         """Buttons"""
