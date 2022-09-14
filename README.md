@@ -6,7 +6,12 @@ The Eating Calculator allows user to control his day of eating. After setting da
 The app has also an innovative function which lets user to type any number of products and then the app optimizes amount of each given product to reach the user's daily nutritional goal.
 
 ## How to start?
-Download the repository and run `pip install -r requirements.txt`. Then run TheEatingCalculator.exe file or run `python src/main.py`.
+1. Download the repository
+2. Run `pip install -r requirements.txt` 
+3. Run TheEatingCalculator.exe file
+or `cd src/` and run `python main.py`.
+
+## Disclaimer
 App uses API to find products. I'm aware that it is using my personal tokens. In this case these tokens are free, so I decided to give open acces to .env file to make checking this application's working nature easier. 
 I encourage you to modify the .env file with your own tokens. Acces to these tokens is free and available by this site: https://developer.nutritionix.com/signup.
 
