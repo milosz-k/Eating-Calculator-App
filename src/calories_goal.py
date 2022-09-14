@@ -40,4 +40,4 @@ class CaloriesGoal:
             self.fats = self.dictionary["fats"]
             self.calories = self.dictionary["calories"]
             self.reading_complete = True
-            self.info = "Daily goal file read successfully"
+            self.info = "Daily goal file read successfully" 

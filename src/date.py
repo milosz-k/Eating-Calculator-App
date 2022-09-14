@@ -68,16 +68,9 @@ class DateFile:
         self.my_goal.read()
         if self.my_goal.reading_complete:
             self.remaining_proteins = self.my_goal.proteins - self.proteins
-            self.remaining_carbohydrates = (
-                self.my_goal.carbohydrates - self.carbohydrates
-            )
+            self.remaining_carbohydrates = self.my_goal.carbohydrates - self.carbohydrates
             self.remaining_fats = self.my_goal.fats - self.fats
-            self.remaining_calories = (
-                self.my_goal.calories
-                - 4 * self.proteins
-                - 4 * self.carbohydrates
-                - 9 * self.fats
-            )
+            self.remaining_calories = self.my_goal.calories - 4 * self.proteins - 4 * self.carbohydrates - 9 * self.fats
 
     def print_daily_eaten_products(self) -> None:
         """Formulate daily eaten products with their amount."""

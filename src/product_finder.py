@@ -54,7 +54,5 @@ class FindProducts:
             self.name = self.name[:-1]
         self.grams = self.response_json["foods"][ordinal_nr]["serving_weight_grams"]
         self.proteins = self.response_json["foods"][ordinal_nr]["nf_protein"]
-        self.carbohydrates = self.response_json["foods"][ordinal_nr][
-            "nf_total_carbohydrate"
-        ]
+        self.carbohydrates = self.response_json["foods"][ordinal_nr]["nf_total_carbohydrate"]
         self.fats = self.response_json["foods"][ordinal_nr]["nf_total_fat"]

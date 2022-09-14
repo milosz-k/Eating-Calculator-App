@@ -52,6 +52,7 @@ class RemainingCalculator:
             self.remaining_calories = meal.current_day_file.remaining_calories
         self.info.append(meal.current_day_file.info)
         self.info.append(meal.current_day_file.my_goal.info)
+        self.goal_read_complete = meal.current_day_file.my_goal.reading_complete
 
     def calculate(self) -> None:
         """Calculates amount of each product separately to fill up
@@ -59,11 +60,7 @@ class RemainingCalculator:
         for n in range(0, len(self.current_products_list)):
             if self.remaining_proteins >= 0:
                 try:
-                    self.jeszcze_gramow_produktu_aby_bialko = (
-                        self.remaining_proteins
-                        / self.current_products_list[n].proteins
-                        * self.current_products_list[n].grams
-                    )
+                    self.jeszcze_gramow_produktu_aby_bialko = self.remaining_proteins / self.current_products_list[n].proteins * self.current_products_list[n].grams
                     self.info.append(
                         f"{round(self.jeszcze_gramow_produktu_aby_bialko)} grams of {self.current_products_list[n].name} needed to fill remaining {self.remaining_proteins}g protein"
                     )
@@ -78,11 +75,7 @@ class RemainingCalculator:
 
             if self.remaining_carbohydrates >= 0:
                 try:
-                    self.jeszcze_gramow_produktu_aby_wegle = (
-                        self.remaining_carbohydrates
-                        / self.current_products_list[n].carbohydrates
-                        * self.current_products_list[n].grams
-                    )
+                    self.jeszcze_gramow_produktu_aby_wegle = self.remaining_carbohydrates / self.current_products_list[n].carbohydrates * self.current_products_list[n].grams
                     self.info.append(
                         f"{round(self.jeszcze_gramow_produktu_aby_wegle)} grams of {self.current_products_list[n].name} needed to fill remaining {self.remaining_carbohydrates}g carbohydrates"
                     )
@@ -97,11 +90,7 @@ class RemainingCalculator:
 
             if self.remaining_fats >= 0:
                 try:
-                    self.jeszcze_gramow_produktu_aby_tluszcze = (
-                        self.remaining_fats
-                        / self.current_products_list[n].fats
-                        * self.current_products_list[n].grams
-                    )
+                    self.jeszcze_gramow_produktu_aby_tluszcze = self.remaining_fats / self.current_products_list[n].fats * self.current_products_list[n].grams
                     self.info.append(
                         f"{round(self.jeszcze_gramow_produktu_aby_tluszcze)} grams of {self.current_products_list[n].name} needed to fill remaining {self.remaining_fats}g fats"
                     )

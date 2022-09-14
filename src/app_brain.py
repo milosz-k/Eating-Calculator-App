@@ -72,10 +72,10 @@ class AppBrain:
         try:
             calculator.create_available_products_list(query)
             calculator.calculate_remaining_makro()
-            if "File read successfully" in calculator.info:
+            if calculator.goal_read_complete:
                 calculator.calculate()
         except DatabaseError:
-            pass
+            return "No product database connection"
         except KeyError:
             return "No one product found"
         info = ""
