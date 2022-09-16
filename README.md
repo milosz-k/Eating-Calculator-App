@@ -8,7 +8,8 @@ The app has also an innovative function which lets user to type any number of pr
 ## How to start?
 1. Download the repository
 2. Run `pip install -r requirements.txt` 
-3. Run TheEatingCalculator.exe file
+3. (Linux only) Run `sudo apt-get install python3-tk`
+4. Run TheEatingCalculator.exe file
 or `cd src/` and run `python main.py`.
 
 ## Disclaimer
