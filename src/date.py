@@ -11,9 +11,6 @@ class DateFile:
 
     def __init__(self) -> None:
         "Init variables."
-        self.proteins = 0
-        self.carbohydrates = 0
-        self.fats = 0
         self.whole_day_data = {}
 
     def create_current_day_file(self, dict) -> None:
@@ -57,6 +54,9 @@ class DateFile:
 
     def sum_daily_makros(self) -> None:
         """Sum proteins, carbohydrates and fats eaten during current day."""
+        self.proteins = 0
+        self.carbohydrates = 0
+        self.fats = 0
         for key in self.whole_day_data:
             self.proteins += round(self.whole_day_data[key]["proteins"])
             self.carbohydrates += round(self.whole_day_data[key]["carbohydrates"])
