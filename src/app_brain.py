@@ -89,7 +89,7 @@ class AppBrain:
         today.read_current_day()
         today.sum_daily_makros()
 
-        return f"{today.info}\nYou have eaten today:\n{today.proteins}g proteins\n{today.carbohydrates}g carbohydrates\n{today.fats}g fats"
+        return f"{today.info}\nYou have eaten today:\n{today.proteins}g proteins\n{today.carbohydrates}g carbohydrates\n{today.fats}g fats\n{today.calories} kcal"
 
     def print_daily_eaten_products(self) -> str:
         """Return daily eaten products."""

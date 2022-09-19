@@ -57,10 +57,12 @@ class DateFile:
         self.proteins = 0
         self.carbohydrates = 0
         self.fats = 0
+        self.calories = 0
         for key in self.whole_day_data:
             self.proteins += round(self.whole_day_data[key]["proteins"])
             self.carbohydrates += round(self.whole_day_data[key]["carbohydrates"])
             self.fats += round(self.whole_day_data[key]["fats"])
+            self.calories += 4 * self.proteins + 4 * self.carbohydrates + 9 * self.fats
 
     def remaining_makros(self) -> None:
         """Calculate amount of remaining macronutrients."""
@@ -70,7 +72,7 @@ class DateFile:
             self.remaining_proteins = self.my_goal.proteins - self.proteins
             self.remaining_carbohydrates = self.my_goal.carbohydrates - self.carbohydrates
             self.remaining_fats = self.my_goal.fats - self.fats
-            self.remaining_calories = self.my_goal.calories - 4 * self.proteins - 4 * self.carbohydrates - 9 * self.fats
+            self.remaining_calories = self.my_goal.calories - self.calories
 
     def print_daily_eaten_products(self) -> None:
         """Formulate daily eaten products with their amount."""
