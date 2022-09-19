@@ -62,137 +62,129 @@ class Window:
 
         def submit() -> None:
             """Submit button execute inside."""
-            query = entry1.get()
-            label1.destroy()
-            entry1.destroy()
-            submit_button.destroy()
+            query = self.entry1.get()
+            self.clear_screen()
             messagebox.showinfo(
                 title="information", message=f"{AppBrain().add_meal(query)}"
             )
 
-        label1 = Label(
+        self.clear_screen()
+        self.label1 = Label(
             text="What have you eaten?",
             bg="silver",
             highlightthickness=2,
             highlightbackground="grey",
         )
-        label1.grid(row=3, column=0, columnspan=2, pady=0)
-        entry1 = Entry(width=50, state="normal")
-        entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
+        self.label1.grid(row=3, column=0, columnspan=2, pady=0)
+        self.entry1 = Entry(width=50, state="normal")
+        self.entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
 
-        submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
-        submit_button.grid(row=4, column=1, sticky="e", padx=20)
+        self.submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
+        self.submit_button.grid(row=4, column=1, sticky="e", padx=20)
 
     def button_set_daily_goal(self) -> None:
         """Set daily goal button execute."""
 
         def submit() -> None:
             """Sumit button execute inside."""
-            proteins = entry1.get()
-            carbohydrates = entry2.get()
-            fats = entry3.get()
-            label1.destroy()
-            label2.destroy()
-            label3.destroy()
-            entry1.destroy()
-            entry2.destroy()
-            entry3.destroy()
-            submit_button.destroy()
+            proteins = self.entry1.get()
+            carbohydrates = self.entry2.get()
+            fats = self.entry3.get()
+            self.clear_screen()
             messagebox.showinfo(
                 title="information",
                 message=f"{AppBrain().set_calories_goal(proteins, carbohydrates, fats)}",
             )
 
-        label1 = Label(
+        self.clear_screen()
+        self.label1 = Label(
             text="Type your proteins goal",
             bg="silver",
             highlightthickness=2,
             highlightbackground="grey",
         )
-        label1.grid(row=3, column=0, columnspan=2, pady=0)
+        self.label1.grid(row=3, column=0, columnspan=2, pady=0)
 
-        label2 = Label(
+        self.label2 = Label(
             text="Type your carbohydrates goal",
             bg="silver",
             highlightthickness=2,
             highlightbackground="grey",
         )
-        label2.grid(row=5, column=0, columnspan=2, pady=0)
+        self.label2.grid(row=5, column=0, columnspan=2, pady=0)
 
-        label3 = Label(
+        self.label3 = Label(
             text="Type your fats goal",
             bg="silver",
             highlightthickness=2,
             highlightbackground="grey",
         )
-        label3.grid(row=7, column=0, columnspan=2, pady=0)
+        self.label3.grid(row=7, column=0, columnspan=2, pady=0)
 
-        entry1 = Entry(width=10, state="normal")
-        entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
+        self.entry1 = Entry(width=10, state="normal")
+        self.entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
 
-        entry2 = Entry(width=10, state="normal")
-        entry2.grid(row=6, column=0, columnspan=2, padx=0, pady=0)
+        self.entry2 = Entry(width=10, state="normal")
+        self.entry2.grid(row=6, column=0, columnspan=2, padx=0, pady=0)
 
-        entry3 = Entry(width=10, state="normal")
-        entry3.grid(row=8, column=0, columnspan=2, padx=0, pady=0)
+        self.entry3 = Entry(width=10, state="normal")
+        self.entry3.grid(row=8, column=0, columnspan=2, padx=0, pady=0)
 
-        submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
-        submit_button.grid(row=8, column=1, sticky="e", padx=20)
+        self.submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
+        self.submit_button.grid(row=8, column=1, sticky="e", padx=20)
 
     def button_else_to_eat(self) -> None:
         """Else to eat button execute."""
 
         def submit() -> None:
             """Sumit button execute inside."""
-            query = entry1.get()
-            label1.destroy()
-            entry1.destroy()
-            submit_button.destroy()
+            query = self.entry1.get()
+            self.clear_screen()
             messagebox.showinfo(
                 title="information", message=f"{AppBrain().else_to_eat(query)}"
             )
 
-        label1 = Label(
+        self.clear_screen()
+        self.label1 = Label(
             text="Type your products",
             bg="silver",
             highlightthickness=2,
             highlightbackground="grey",
         )
-        label1.grid(row=3, column=0, columnspan=2, pady=0)
+        self.label1.grid(row=3, column=0, columnspan=2, pady=0)
 
-        entry1 = Entry(width=50, state="normal")
-        entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
+        self.entry1 = Entry(width=50, state="normal")
+        self.entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
 
-        submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
-        submit_button.grid(row=4, column=1, sticky="e", padx=20)
+        self.submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
+        self.submit_button.grid(row=4, column=1, sticky="e", padx=20)
 
     def button_adjust_last_meal_solver(self) -> None:
         """Adjust last meal solver button execute."""
 
         def submit() -> None:
             """Sumit button execute inside."""
-            query = entry1.get()
-            label1.destroy()
-            entry1.destroy()
-            submit_button.destroy()
+            query = self.entry1.get()
+            self.clear_screen()
             messagebox.showinfo(
                 title="information",
                 message=f"{AppBrain().adjust_last_meal_solver(query)}",
             )
 
-        label1 = Label(
+        self.clear_screen()
+        self.label1 = Label(
             text="Type your products",
             bg="silver",
             highlightthickness=2,
             highlightbackground="grey",
         )
-        label1.grid(row=3, column=0, columnspan=2, pady=0)
+        self.label1.grid(row=3, column=0, columnspan=2, pady=0)
 
-        entry1 = Entry(width=50, state="normal")
-        entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
+        self.entry1 = Entry(width=50, state="normal")
+        self.entry1.grid(row=4, column=0, columnspan=2, padx=0, pady=0)
 
-        submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
-        submit_button.grid(row=4, column=1, sticky="e", padx=20)
+        self.submit_button = Button(text="submit", width=5, bg="#03bafc", command=submit)
+        self.submit_button.grid(row=4, column=1, sticky="e", padx=20)
 
     def button_already_eaten_today(self) -> None:
         """Already eaten button execute."""
@@ -205,3 +197,16 @@ class Window:
         messagebox.showinfo(
             title="information", message=f"{AppBrain().print_daily_eaten_products()}"
         )
+
+    def clear_screen(self) -> None:
+        """deletes unnecessary entries, labels and buttons."""
+        try:
+            self.submit_button.destroy()
+            self.label1.destroy()
+            self.entry1.destroy()
+            self.label2.destroy()
+            self.entry2.destroy()
+            self.label3.destroy()
+            self.entry3.destroy()
+        except AttributeError:
+            pass
