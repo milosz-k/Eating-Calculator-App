@@ -27,7 +27,9 @@ class AppBrain:
                 int(proteins) == proteins
                 int(carbohydrates) == carbohydrates
                 int(fats) == fats
-                assert 0 <= int(proteins) and int(carbohydrates) and int(fats)
+                assert 0 <= int(proteins)
+                assert 0 <= int(carbohydrates)
+                assert 0 <= int(fats)
                 variables_correct = True
             except ValueError:
                 return "Please write your goal by numeric numbers"
