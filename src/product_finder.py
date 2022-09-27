@@ -39,7 +39,7 @@ class FindProducts:
         self.response_json = self.response.json()
         self.number_of_products = len(self.response_json["foods"])
         if self.number_of_products < self.probably_products:
-            self.info = "There may be less products found and used then suspected"
+            self.info = "There may be less products found and used than expected"
         else:
             self.info = "All products found"
 
